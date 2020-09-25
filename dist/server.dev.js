@@ -30,7 +30,7 @@ io.on('connection', function (socket) {
     var user = userJoin(socket.id, username, room);
     socket.join(user.room); //Welcome to current user
 
-    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!!')); //Broadcast when a user connects
+    socket.emit('message', formatMessage(botName,'Welcome to ChatCord!!')); //Broadcast when a user connects
 
     socket.broadcast.to(user.room).emit('message', formatMessage(botName, "".concat(user.username, " has joined the chat"))); //send users and room info
 
