@@ -49,7 +49,7 @@ io.on('connection', function (socket) {
     var user = userLeave(socket.id);
 
     if (user) {
-      io.to(user.room).emit('message', formatMessage(botName, "".concat(user.username, " has left the chat"))); //send users and room info
+      io.to(user.room).emit('message', formatMessage(botName, "".concat(user.username, " has left the chat."))); //send users and room info
 
       io.to(user.room).emit('roomUsers', {
         room: user.room,
